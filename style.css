@@ -1,8 +1,13 @@
-body{
-	background-color:#5d5f90a4;
+body {
+	background: radial-gradient(circle, #5d5f90a4, #2c2c54);
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	overflow: hidden;
 }
 
-.container{
+.container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -10,99 +15,90 @@ body{
 	width: 100vw;
 }
 
-fieldset{
-	width: 400px; 
-	height: 600px; 
-	padding: 20px 20px 20px 30px;
+fieldset {
+	width: 350px;
+	height: 600px;
+	padding: 20px;
 	margin: 30px auto;
 	background: linear-gradient(to bottom, #b4c5d8, #041e44);
+	border-radius: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+	border: 5px solid rgba(0, 0, 0, 0.8);
+	animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 0;
+}
+
+.button_digits, .buttonmathButtons, .deleteLast, .buttonmaths, .buttonmathButton, .buttonmathButtons1 {
+	height: 70px;
+	width: 70px;
+	border-radius: 20%;
+	font-size: 30px;
+	border: none;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.button_digits:hover, .buttonmaths:hover, .buttonmathButtons:hover, .deleteLast:hover, .buttonmathButton:hover, .buttonmathButtons1:hover {
+	transform: scale(1.1);
+	filter: brightness(1.3);
+}
+
+.button_digits {
+	background: linear-gradient(145deg, #4a90e2, #357acb);
+	color: white;
+}
+
+.buttonmathButtons, .deleteLast, .buttonmathButton, .buttonmathButtons1 {
+	background: linear-gradient(145deg, #ffa726, #ff9800);
+	color: black;
+}
+
+.buttonmaths {
+	background: linear-gradient(145deg, #ffffff, #e0e0e0);
+	color: black;
+}
+
+#display {
+	height: 70px;
+	width: 330px;
 	border-radius: 8px;
-	border-top: 10px solid #150101;
-	border-right: 10px solid #000000;
-	border-bottom: 10px solid #110000;
-	border-left: 10px solid #020000;
-}
-
-.row{
-	padding: 3px; 
-}
-
-.button_digits:hover{
-	background-color: #3a68d2;
-}
-
-.buttonmathButtons:hover{
-	background-color: rgb(14, 221, 14);
-}
-
-.button_digits{
-	height: 90px; 
-	width: 90px; 
-	border-radius: 20%;
-	font-size: 40px; 
-}
-
-.buttonmathButtons{
-	height: 90px; 
-	width: 90px; 
-	border-radius: 20%;
-	background-color: rgba(255,159,10,255);
-	font-size: 30px; 
-}
-
-.deleteLast:hover{
-	background-color: rgb(14, 221, 14);
-}
-
-.deleteLast{
-	height: 90px; 
-	width: 90px; 
-	border-radius: 20%;
-	background-color: rgba(255,159,10,255);
-	font-size: 28px; 
-}
-
-.buttonmaths:hover{
-	background-color: #3a68d2;
-}
-.buttonmaths{
-	height: 90px; 
-	width: 90px; 
-	border-radius: 20%;
-	background-color: white;
-	font-size: 40px; 
-}
-#display{
-	height: 70px; 
-	width : 370px;
-	border-radius: 8px;
-	padding-top: 10px;
+	padding: 10px;
 	margin-top: 10px;
-	font-size: 60px; 
-	text-align: left; 
-
+	font-size: 50px;
+	text-align: right;
+	box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.5);
+	border: 2px solid #000;
+	background-color: #f8f8f8;
+	color: #333;
+	transition: box-shadow 0.3s ease;
 }
 
-.buttonmathButton{
-	height: 90px; 
-	width: 90px; 
-	border-radius: 20%;
-	background-color: rgba(255,159,10,255);
-	font-size: 40px; 
+#display:focus {
+	box-shadow: 0 0 10px #4a90e2;
 }
 
-.buttonmathButton:hover{
-	background-color: rgb(14, 221, 14);
+.buttonmathButton, .buttonmathButtons1 {
+	font-size: 28px;
+	line-height: 1.5;
 }
 
-.buttonmathButtons1{
-	height: 90px; 
-	width: 90px;  
-	border-radius: 20%;
-	background-color: rgba(255,159,10,255);
-	font-size: 40px;
-}
-
-.buttonmathButtons1:hover{
-	background-color: rgb(14, 221, 14);
+.deleteLast {
+	font-size: 24px;
 }
